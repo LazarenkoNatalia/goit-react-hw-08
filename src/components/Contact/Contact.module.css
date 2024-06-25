@@ -1,0 +1,30 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contField {
+    color: black;
+    font-size: 18px;
+    width: 210px;
+    margin: 10px;
+    margin-right: 0;
+    
+
+}
+
+.btn {
+    border : 1px solid black;
+    border-radius: 2px;
+    color: black;
+        font-size: 16px;
+        width: 60px;
+        height: 30px;
+       padding: 3px;
+        margin-right: 10px;
+
+}

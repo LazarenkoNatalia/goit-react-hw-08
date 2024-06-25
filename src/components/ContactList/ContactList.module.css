@@ -1,0 +1,16 @@
+.listCard {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+   
+}
+
+.card {
+    border: 3px solid black;
+        border-radius: 4px;
+        color: black;
+        width: 300px;
+        height: 80px;
+list-style-type: none;
+}

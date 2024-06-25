@@ -1,0 +1,53 @@
+.box {
+    border: 3px solid black;
+        border-radius: 4px;
+        color: black;
+        font-size: 16px;
+        margin-left: 40px;
+        width: 300px;
+        height: 180px;
+        display: flex;
+        /* align-items:center; */
+        /* text-align: center; */
+        justify-content: space-between;
+        flex-direction: column;
+}
+
+.textH {
+    color: black;
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0;
+    margin-left: 40px;
+
+}
+
+.text {
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    margin-left: 10px;
+   
+}
+
+.input {
+    margin-left: 10px;
+    width: 270px;
+}
+
+.btn {
+    border: 1px solid black;
+    border-radius: 2px;
+    color: black;
+    font-size: 16px;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    bottom: auto;
+    padding: 5px;
+    margin-left: 75px;
+    margin-bottom: 10px;
+   
+    
+}
