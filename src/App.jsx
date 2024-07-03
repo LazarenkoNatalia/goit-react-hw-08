@@ -1,66 +1,58 @@
  import { useEffect } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+
 //  import './App.css'
-import ContactList from './components/ContactList/ContactList'
-import ContactForm from './components/ContactForm/ContactForm'
-import SearchBox from './components/SearchBox/SearchBox'
+// import ContactList from './components/ContactList/ContactList'
+// import ContactForm from './components/ContactForm/ContactForm'
+// import SearchBox from './components/SearchBox/SearchBox'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchContacts } from './redux/contactsOps'
-import { selectLoading, selectError } from './redux/contactsSlice'
+// import { fetchContacts } from './redux/contactsOps'
+// import { selectLoading, selectError } from './redux/contactsSlice'
 // import contactmass from './data/ContactList.json'
+import { refreshUser } from './redux/auth/operations.js'
+import {selectRefresh} from './redux/auth/selectors.js'
+import PrivateRoute from './components/PrivateRoute/PrivateRjute.jsx'
+import PublicRoute from './components/PublicRoute/PublicRote.jsx'
+import { lazy } from "react"
+import { Route, Routes } from 'react-router-dom'
+// import { Toaster } from 'react-hot-toast'
+import  Layout  from './components/Layout/Layout.jsx'
+
+const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"))
+const RegistrationPage = lazy(() => import("./pages/RegistrationPage/RegistrationPage.jsx"))
+const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage.jsx"))
+const ContactsPage = lazy(() => import("./pages/ContactsPage/ContactsPage.jsx"))
+
+
 function App() {
-  const dispatch = useDispatch()
-  // console.log(state)
-   const loading = useSelector(selectLoading)
-   const error = useSelector(selectError)
-  
+
+ const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectRefresh);
+
   useEffect(() => {
-    dispatch(fetchContacts())
-  },[dispatch])
+    dispatch(refreshUser());
+  }, [dispatch]);
 
-//   const [phonebook, setPhonebook] = useState(() => {
-//     const savedContacts = localStorage.getItem("saved-contacts");
-
-//     if (savedContacts !== null) {
-//       return JSON.parse(savedContacts);
-//     }
-//     return contactmass;
-//   });
-
-
-// useEffect(() => {
-//     localStorage.setItem("saved-contacts", JSON.stringify(phonebook));
-//   }, [phonebook]);
-
-
-//   const [search, setSearch] = useState('')
-
-//   const addCard = (newCard) => {
-//       setPhonebook((prevPhone) => { return [...prevPhone, newCard] })
-//   }
-
-//   const delCard = (cardId) => {
-//      setPhonebook((prevPhone) => { return prevPhone.filter(card => card.id !== cardId) })
-//   }
-
-//   const viewPhonebook = phonebook.filter((card) => 
-//     card.name.toLowerCase().includes(search.toLowerCase())
-//   )
-  
-  
-   return (
-     <>
-      <ContactForm />
-       <SearchBox  /> 
-       {loading && <p> Loading...</p>}
-      {error && <p> Some error </p>}
-       <ContactList 
-        //  contactitems={viewPhonebook} onDel={delCard}
-       />
-      
-     </>
-   )
+  return (
+  <>
+      {isRefreshing ? (
+        <p>Refreshing user, please wait...</p>
+      ) : (
+        <Layout>
+          <Routes>
+              <Route path="/" element={<HomePage />} />
+               <Route element={<PublicRoute />}>
+                 <Route path="/register" element={<RegistrationPage />} />
+                 <Route path="/login" element={<LoginPage />} />
+              </Route>
+              <Route element={<PrivateRoute />}>
+                <Route path="/contacts" element={<ContactsPage />} />
+              </Route>
+          </Routes>
+        </Layout>
+      )}
+ </> );
 }
 
 export default App
+
+  
