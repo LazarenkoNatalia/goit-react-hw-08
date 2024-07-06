@@ -1,16 +1,14 @@
  import { useEffect , lazy} from 'react'
 
-//  import './App.css'
-
 import { useDispatch, useSelector } from 'react-redux'
 
 import { refreshUser } from './redux/auth/operations.js'
 import {selectRefresh} from './redux/auth/selectors.js'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx'
 import RestrictedRoute from './components/RestrictedRoute/RestrictedRoute.jsx'
-//  import PublicRoute from './components/PublicRoute/PublicRoute.jsx'
+
 import { Navigate, Route, Routes } from 'react-router-dom'
-// import { Toaster } from 'react-hot-toast'
+
 import  Layout  from './components/Layout/Layout.jsx'
 
 const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx"))
@@ -54,10 +52,7 @@ function App() {
           }
         /> 
 
-                {/* <Route element={<PublicRoute />}>
-                 <Route path="/register" element={<RegistrationPage />} />
-                 <Route path="/login" element={<LoginPage />} />
-              </Route>  */}
+            
 
                <Route
           path="/contacts"
@@ -66,9 +61,6 @@ function App() {
           }
         /> 
 
-               {/* <Route element={<PrivateRoute />}>
-                <Route path="/contacts" element={<ContactsPage />} />
-              </Route>  */}
                <Route path='*' element={<Navigate to="/" />} />    
           </Routes>
         </Layout>

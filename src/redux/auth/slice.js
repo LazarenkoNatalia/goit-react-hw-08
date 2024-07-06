@@ -30,7 +30,8 @@ const authSlice = createSlice({
         state.user = {
     name: null,
     email: null,
-  }
+     }
+     state.items = []
         state.token = null
         state.isLoggedIn= false
         
@@ -39,7 +40,7 @@ const authSlice = createSlice({
         state.isRefreshing = true;
       })
       .addCase(refreshUser.fulfilled, (state, action) => {
-    // console.log(action.payload)
+  
     state.user = action.payload;
     state.isLoggedIn = true
     state.isRefreshing = false

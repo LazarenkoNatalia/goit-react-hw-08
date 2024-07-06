@@ -5,8 +5,7 @@ import { logIn } from '../../redux/auth/operations.js'
 import stylLogForm from './LoginForm.module.css'
 
 const LoginForm = () => {
-	// const passwordId = useId()
-	// const emailId = useId()
+	
 	const dispatch=useDispatch()
 
 	const handleSubmit = (values, actions) => {
