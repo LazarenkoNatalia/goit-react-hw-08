@@ -30,7 +30,7 @@ const RegistrationForm = () => {
 			validationSchema={validationSchema}
 			onSubmit={handleSubmit}
 		>  
-				<Form >
+				<Form autoСomplete='off'>
 					<h2 className={stylForm.textH}>  Register,please!</h2>
 					
 					<div className={stylForm.box}>
