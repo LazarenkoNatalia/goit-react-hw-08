@@ -1,6 +1,6 @@
 import stylContList from "./ContactList.module.css"
 import { useSelector } from 'react-redux';
-import { selectFilteredContacts, } from '../../redux/contactsSlice.js';
+import { selectFilteredContacts, } from '../../redux/contacts/selectors.js';
 // import { selectNameFilter } from '../../redux/filtersSlice.js';
 import Contact from '../Contact/Contact.jsx';
 

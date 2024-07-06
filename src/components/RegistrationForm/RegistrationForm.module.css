@@ -1,11 +1,11 @@
 .box {
-    border: 3px solid black;
+    border: 3px solid #646cff;
     border-radius: 4px;
     color: black;
     font-size: 16px;
     margin-left: 40px;
     width: 300px;
-    height: 180px;
+    height: 270px;
     display: flex;
     /* align-items:center; */
     /* text-align: center; */
@@ -13,21 +13,22 @@
     flex-direction: column;
 }
 
-.textH {
-    color: black;
-    font-size: 36px;
-    font-weight: 500;
-    margin: 0;
-    margin-left: 40px;
-
-}
-
 .text {
-    color: black;
+    color: #3a41ca;
     font-size: 16px;
     font-weight: 500;
     margin: 0;
     margin-left: 10px;
+
+}
+
+.textH {
+    color: #3a41ca;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    margin-left: 40px;
+    margin-bottom: 10px;
 
 }
 
@@ -37,9 +38,9 @@
 }
 
 .btn {
-    border: 1px solid black;
+    border: 1px solid #646cff;
     border-radius: 2px;
-    color: black;
+    color: #3a41ca;
     font-size: 16px;
     width: 150px;
     height: 30px;
@@ -50,4 +51,8 @@
     margin-bottom: 10px;
 
 
+}
+
+.btn:hover {
+    background-color: rgb(228, 245, 245);
 }

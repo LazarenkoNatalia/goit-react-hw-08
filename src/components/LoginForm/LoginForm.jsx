@@ -1,11 +1,12 @@
 import { Field, Form, Formik } from 'formik'
-import { useId } from 'react'
+
 import { useDispatch } from 'react-redux'
-import{logIn} from '../../redux/auth/operations.js'
+import { logIn } from '../../redux/auth/operations.js'
+import stylLogForm from './LoginForm.module.css'
 
 const LoginForm = () => {
-	const passwordId = useId()
-	const emailId = useId()
+	// const passwordId = useId()
+	// const emailId = useId()
 	const dispatch=useDispatch()
 
 	const handleSubmit = (values, actions) => {
@@ -13,17 +14,23 @@ const LoginForm = () => {
 		actions.resetForm()
 	}
 	return (
+		
+		
 		<Formik initialValues={{ password: '', email: '' }} onSubmit={handleSubmit}>
-			<Form>
-				<label htmlFor={emailId}>Email: </label>
-				<Field name='email' id={emailId} />
-				<br />
-				<label htmlFor={passwordId}>Password: </label>
-				<Field name='password' id={passwordId} type='password' />
+			<Form  autoComplete='off'>
+				<h2 className={stylLogForm.textH}>  Log in,please!</h2>
+						<div className={stylLogForm.box}>
+				<p  className={stylLogForm.text}>Email: </p>
+				<Field name='email' id='email' className={stylLogForm.input}/>
+				
+				<p className={stylLogForm.text}>Password: </p>
+				<Field name='password' id='passwordId' type='password' className={stylLogForm.input}/>
 				<hr />
-				<button type='submit'>Login</button>
+					<button type='submit' className={stylLogForm.btn}>Login</button>
+					</div>
 			</Form>
 		</Formik>
+	
 	)
 }
 

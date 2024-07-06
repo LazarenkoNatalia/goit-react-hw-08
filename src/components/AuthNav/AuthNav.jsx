@@ -1,11 +1,19 @@
 import { Link } from 'react-router-dom'
+import stylAuthNav from './AuthNav.module.css'
 
 const AuthNav = () => {
 	return (
-		<div >
-			<Link to='/login'>Login</Link>
-			<Link to='/register'>Registration</Link>
-		</div>
+		<nav>
+
+			<ul className={stylAuthNav.container}>
+				<li>
+				<Link to='/login' className={stylAuthNav.item}>Login</Link>
+			</li>
+			<li>
+				<Link to='/register'>Registration</Link>
+				</li>
+				</ul>
+		</nav>
 	)
 }
 

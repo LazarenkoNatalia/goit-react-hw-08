@@ -2,7 +2,7 @@ import { Field, Form, Formik, ErrorMessage } from 'formik'
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux'
 import { register } from "../../redux/auth/operations.js"
-import stylForm from './RegisterForm.module.css'
+import stylForm from './RegistrationForm.module.css'
 
 const validationSchema = Yup.object({
   name: Yup.string().required('Required'),
@@ -12,11 +12,12 @@ const validationSchema = Yup.object({
     .required('Required'),
 });
 
-const RegisterForm = () => {
+const RegistrationForm = () => {
 	const dispatch =useDispatch()
 	
 
-	const handleSubmit = ( values, actions ) => {
+	const handleSubmit = (values, actions) => {
+		console.log(values)
 		dispatch(register(values))
 		// submit(values)
 		actions.resetForm()
@@ -29,8 +30,9 @@ const RegisterForm = () => {
 			validationSchema={validationSchema}
 			onSubmit={handleSubmit}
 		>  
-				<Form autoСomplete='off'>
-					<h2 className={stylForm.text}>Register,please!</h2>
+				<Form >
+					<h2 className={stylForm.textH}>  Register,please!</h2>
+					
 					<div className={stylForm.box}>
 				<p className={stylForm.text}>Name</p>
 				<Field name='name' id="name" className={stylForm.input} autoСomplete='username'/>
@@ -52,4 +54,4 @@ const RegisterForm = () => {
 	)
 }
 
-export default RegisterForm
+export default RegistrationForm

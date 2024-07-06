@@ -1,0 +1,13 @@
+.text {
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    padding-top: 50px;
+    color: #007bff;
+}
+
+.container {
+    display: 'flex';
+    align-items: 'center';
+    justify-content: 'center';
+}

@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 50 px;
+    width: 150px;
+    list-style-type: none;
+}
+
+.item {
+    margin-right: 10px;
+}

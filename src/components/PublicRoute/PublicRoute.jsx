@@ -1,6 +1,6 @@
 import { Outlet, Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import { selectAuth } from '../../redux/auth/selectors'
+import { selectAuth } from '../../redux/auth/selectors.js'
 
 const PublicRoute = () => {
     const { isLoggedIn, token } = useSelector(selectAuth)

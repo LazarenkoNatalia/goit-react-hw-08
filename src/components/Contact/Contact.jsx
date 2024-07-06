@@ -2,7 +2,7 @@ import stylContact from "./Contact.module.css"
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { BsFillPersonFill } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { deleteContact } from '../../redux/contactsOps'
+import { deleteContact } from '../../redux/contacts/operations'
 
 export default function Contact({
     id,

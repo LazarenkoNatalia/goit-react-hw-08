@@ -1,0 +1,10 @@
+.headerBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    border-bottom: 3px solid #646cff;
+    background-color: rgb(228, 245, 245);
+    border-radius: 10px;
+}

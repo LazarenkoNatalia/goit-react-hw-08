@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.btnUser {
+    background-color:rgb(228, 245, 245);
+    color: #3a41ca;
+}
+
+.text {
+    color: #3a41ca;
+    font-size: 20px;
+    font-weight: 500;
+    
+
+}

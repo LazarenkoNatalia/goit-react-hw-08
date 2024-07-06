@@ -3,7 +3,7 @@ import stylForm from './ContactForm.module.css'
 import * as Yup from 'yup'
 // import { nanoid } from 'nanoid'
 import { useDispatch } from 'react-redux'
-import { addContact } from '../../redux/contactsOps'
+import { addContact } from '../../redux/contacts/operations.js'
 
 const validSchema = Yup.object().shape({
 	name: Yup.string().min(3, 'Too small').max(50, 'To large').required('Not valid'),
